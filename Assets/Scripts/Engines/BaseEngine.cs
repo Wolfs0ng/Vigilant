@@ -12,7 +12,7 @@ namespace Vigilant.Engines
     /// <summary>
     /// Default car engine.
     /// </summary>
-    public class DefaultCarEngine : MonoBehaviour, IEngine
+    public class BaseEngine : MonoBehaviour, IEngine
     {
         #region Fields
 
@@ -56,27 +56,6 @@ namespace Vigilant.Engines
 	    protected float steerTimer;
 	    protected float maxSteer;
 	    
-	    
-	    protected float throttleTime = 0.1f;// How long it takes to fully engage the throttle.
-	    protected float throttleReleaseTime = 0.1f;// How long it takes to fully release the throttle.
-	    // How long it takes to fully engage the brakes
-	    public float brakesTime = 0.1f;
-	    // How long it takes to fully release the brakes
-	    public float brakesReleaseTime = 0.1f;
-	    protected float veloSteerTime = 0.05f;// This is added to steerTime per m/s of velocity,
-												// so steering is slower when the car is moving faster.
-	    protected float steerReleaseTime = 0.1f; // How long it takes to fully turn the steering
-	    										// wheel from full lock to center.
-	    protected float steerTime = 0.1f;// How long it takes to fully turn the steering
-										// wheel from center to full lock.
-	    protected float velocitySteerReleaseTime = 0.05f; // This is added to steerReleaseTime per m/s of velocity,
-															// so steering is slower when the car is moving faster.
-	    protected float steerCorrectionFactor;// When detecting a situation where the player tries
-	    									// to counter steer to correct an oversteer situation,
-	    									// steering speed will be multiplied by the difference
-	    									// between steerInput and current steering times this 
-	    									// factor, to make the correction easier.
-        
         protected int targetGear;
 
 	    protected float externalTCSThreshold;  // used to improve TCS behaviour with powerMultiplier>1
@@ -88,7 +67,9 @@ namespace Vigilant.Engines
 	    protected bool engineStart;
 	    protected float clutchInput;//TODO: Сцепление, заменить на бул
 	    protected float handbrakeInput;//TODO: ручной тормоз, заменить на бул
-	    
+
+
+	    private EngineParams engineParams;
 	    
         #endregion
 
@@ -160,7 +141,15 @@ namespace Vigilant.Engines
 		    {
 			    try
 			    {
-				    return steerReleaseTime;
+				    if (engineParams != null)
+				    {
+					    return engineParams.SteerReleaseTime;
+				    }
+				    else
+				    {
+					    //TODO:Add null ref check and error.
+					    Debug.LogError("null");
+				    }
 			    }
 			    catch (Exception exception)
 			    {
@@ -176,7 +165,15 @@ namespace Vigilant.Engines
 		    {
 			    try
 			    {
-				    return steerTime;
+				    if (engineParams != null)
+				    {
+					    return engineParams.SteerTime;
+				    }
+				    else
+				    {
+					    //TODO:Add null ref check and error.
+					    Debug.LogError("null");
+				    }
 			    }
 			    catch (Exception exception)
 			    {
@@ -228,8 +225,13 @@ namespace Vigilant.Engines
                 inputManager.MoveDirectionChanged += OnMoveDirectionChange;
                 inputManager.Button += OnButtonClick;
             }
-            
-            moveDirection = Vector2.zero;
+
+	        if (engineParams == null)
+	        {
+		        engineParams = new EngineParams();
+	        }
+
+	        moveDirection = Vector2.zero;
         }
 
 	    private void Update()
@@ -241,7 +243,7 @@ namespace Vigilant.Engines
 
 		    if (drivetrain.automatic && drivetrain.autoReverse)
 		    {
-			    if (moveDirection.y < 0 && (ownerVelocity <= 0.5f))
+			    if (moveDirection.y < 0 && ownerVelocity <= 0.5f)
 			    {
 				    if (drivetrain.gear != drivetrain.firstReverse)
 				    {
@@ -249,7 +251,7 @@ namespace Vigilant.Engines
 				    }
 			    }
 
-			    if (moveDirection.y > 0 && (ownerVelocity <= 0.5f))
+			    if (moveDirection.y > 0 && ownerVelocity <= 0.5f)
 			    {
 				    if (drivetrain.gear != drivetrain.first)
 				    {
@@ -269,11 +271,11 @@ namespace Vigilant.Engines
 
 		    if (smoothInput)
 		    {
-			    engineAssistant.SmoothSteer(moveDirection.x, steerReleaseTime, steerTime, velocitySteerReleaseTime, ownerVelocity,
-				    veloSteerTime, steerCorrectionFactor,ref steering);
-			    engineAssistant.SmoothThrottle(moveDirection.y, throttleReleaseTime, throttleTime, drivetrain.changingGear,
+			    engineAssistant.SmoothSteer(moveDirection.x,ownerVelocity, engineParams, ref steering);
+			    
+			    engineAssistant.SmoothThrottle(moveDirection.y, engineParams, drivetrain.changingGear,
 				    drivetrain.automatic, ref throttle);
-			    engineAssistant.SmoothBrakes(moveDirection.y,brakesReleaseTime,brakesTime,ref brake);
+			    engineAssistant.SmoothBrakes(moveDirection.y,engineParams,ref brake);
 		    }
 		    else
 		    {
@@ -286,9 +288,6 @@ namespace Vigilant.Engines
 			    }
 		    }
 
-		    //GameObject.Find("ThrottleBar").GetComponent<UIWidget>().height  = Mathf.RoundToInt(throttle*500);
-
-		    // Steer Assistance (limits steering to optimal steer angle)
 		    if (steerAssistance && drivetrain.ratio > 0 && ownerVelocityInKmh > steerAssistanceMinVelocity)
 		    {
 			    float averageLateralSlip = 0;

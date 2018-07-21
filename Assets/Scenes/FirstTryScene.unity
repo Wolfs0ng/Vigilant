@@ -236,6 +236,41 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca4bdddd603d3254ea7673dbb5932698, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &333226071 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: ca4bdddd603d3254ea7673dbb5932698, type: 2}
+  m_PrefabInternal: {fileID: 333226070}
+--- !u!114 &333226072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 333226071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73eb2151121ca49eca0dbcc53c84eace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempRigidbody: {fileID: 0}
+  myTransform: {fileID: 0}
+  carDynamics: {fileID: 0}
+  drivetrain: {fileID: 0}
+  axles: {fileID: 0}
+  inputManager: {fileID: 0}
+  steerAssistanceMinVelocity: 0
+  minTCSVelocity: 0
+  minESPVelocity: 0
+  minABSVelocity: 0
+  thresholdTCS: 0
+  thresholdABS: 0
+  strengthESP: 2
+  smoothInput: 0
+  TCS: 0
+  ESP: 0
+  ABS: 0
+  allWheels: []
+  brakesTime: 0.1
+  brakesReleaseTime: 0.1
 --- !u!1 &389633314
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +807,8 @@ MonoBehaviour:
   moveRightDirection: 100
   moveForwardDirection: 119
   moveBackwardDirection: 115
+  shiftGearUp: 112
+  shiftGearDown: 108
   handBrakeButton: 32
   changeCameraButton: 99
 --- !u!1 &1958145756
