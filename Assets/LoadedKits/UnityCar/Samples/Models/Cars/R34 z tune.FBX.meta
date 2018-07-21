@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 6f107ca800ddce94d8e98c2eaf569e2b
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: body
+    100002: bonnet
+    100004: bonnet_p
+    100006: boot
+    100008: boot_p
+    100010: bump_f
+    100012: bump_f_add
+    100014: bump_f_p
+    100016: bump_r
+    100018: bump_r_p
+    100020: calipers
+    100022: chassis_du
+    100024: door_lf
+    100026: door_lf_p
+    100028: door_rf
+    100030: door_rf_p
+    100032: engine
+    100034: engine01
+    100036: exhaust
+    100038: exhaust 1
+    100040: glass
+    100042: headlights
+    100044: hlight
+    100046: 'hlight '
+    100048: int1
+    100050: int101
+    100052: int2
+    100054: int3
+    100056: l_wing
+    100058: ped_arm
+    100060: ped_fronts
+    100062: petrolcap
+    100064: //RootNode
+    100066: r_spoiler
+    100068: r_wing
+    100070: SteeringWheel
+    100072: taillights
+    100074: wheel_lb_p
+    100076: wheel_lf_p
+    100078: wheel_rb_p
+    100080: wheel_rf
+    100082: wheel_rf_p
+    100084: windback
+    100086: winds_p
+    100088: windsc
+    400000: body
+    400002: bonnet
+    400004: bonnet_p
+    400006: boot
+    400008: boot_p
+    400010: bump_f
+    400012: bump_f_add
+    400014: bump_f_p
+    400016: bump_r
+    400018: bump_r_p
+    400020: calipers
+    400022: chassis_du
+    400024: door_lf
+    400026: door_lf_p
+    400028: door_rf
+    400030: door_rf_p
+    400032: engine
+    400034: engine01
+    400036: exhaust
+    400038: exhaust 1
+    400040: glass
+    400042: headlights
+    400044: hlight
+    400046: 'hlight '
+    400048: int1
+    400050: int101
+    400052: int2
+    400054: int3
+    400056: l_wing
+    400058: ped_arm
+    400060: ped_fronts
+    400062: petrolcap
+    400064: //RootNode
+    400066: r_spoiler
+    400068: r_wing
+    400070: SteeringWheel
+    400072: taillights
+    400074: wheel_lb_p
+    400076: wheel_lf_p
+    400078: wheel_rb_p
+    400080: wheel_rf
+    400082: wheel_rf_p
+    400084: windback
+    400086: winds_p
+    400088: windsc
+    2300000: body
+    2300002: bonnet
+    2300004: boot
+    2300006: bump_f
+    2300008: bump_f_add
+    2300010: bump_r
+    2300012: calipers
+    2300014: door_lf
+    2300016: door_rf
+    2300018: engine
+    2300020: exhaust 1
+    2300022: glass
+    2300024: 'hlight '
+    2300026: int1
+    2300028: int101
+    2300030: int2
+    2300032: int3
+    2300034: l_wing
+    2300036: r_spoiler
+    2300038: r_wing
+    2300040: SteeringWheel
+    2300042: wheel_rf
+    2300044: windback
+    2300046: windsc
+    3300000: body
+    3300002: bonnet
+    3300004: boot
+    3300006: bump_f
+    3300008: bump_f_add
+    3300010: bump_r
+    3300012: calipers
+    3300014: door_lf
+    3300016: door_rf
+    3300018: engine
+    3300020: exhaust 1
+    3300022: glass
+    3300024: 'hlight '
+    3300026: int1
+    3300028: int101
+    3300030: int2
+    3300032: int3
+    3300034: l_wing
+    3300036: r_spoiler
+    3300038: r_wing
+    3300040: SteeringWheel
+    3300042: wheel_rf
+    3300044: windback
+    3300046: windsc
+    4300000: boot
+    4300002: bonnet
+    4300004: r_spoiler
+    4300006: door_lf
+    4300008: door_rf
+    4300010: bump_f
+    4300012: bump_f_add
+    4300014: bump_r
+    4300016: windsc
+    4300018: engine
+    4300020: exhaust
+    4300022: calipers
+    4300024: int1
+    4300026: int3
+    4300028: int2
+    4300030: int101
+    4300032: body
+    4300034: l_wing
+    4300036: SteeringWheel
+    4300038: r_wing
+    4300040: glass
+    4300042: windback
+    4300044: 'hlight '
+    4300046: wheel_rf
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 42
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

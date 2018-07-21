@@ -1,0 +1,892 @@
+fileFormatVersion: 2
+guid: bd2fcbdd43470a5408bbb3c8c12e8cd0
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Cerbs
+    100002: 'Cerbs '
+    100004: Cerbs  1
+    100006: Cerbs  10
+    100008: Cerbs  11
+    100010: Cerbs  12
+    100012: Cerbs  13
+    100014: Cerbs  14
+    100016: Cerbs  15
+    100018: Cerbs  16
+    100020: Cerbs  17
+    100022: Cerbs  18
+    100024: Cerbs  19
+    100026: Cerbs  2
+    100028: Cerbs  20
+    100030: Cerbs  21
+    100032: Cerbs  22
+    100034: Cerbs  23
+    100036: Cerbs  24
+    100038: Cerbs  25
+    100040: Cerbs  26
+    100042: Cerbs  27
+    100044: Cerbs  28
+    100046: Cerbs  29
+    100048: Cerbs  3
+    100050: Cerbs  30
+    100052: Cerbs  31
+    100054: Cerbs  32
+    100056: Cerbs  33
+    100058: Cerbs  34
+    100060: Cerbs  35
+    100062: Cerbs  36
+    100064: Cerbs  37
+    100066: Cerbs  38
+    100068: Cerbs  4
+    100070: Cerbs  5
+    100072: Cerbs  6
+    100074: Cerbs  7
+    100076: Cerbs  8
+    100078: Cerbs  9
+    100080: 'Grass '
+    100082: Grass  1
+    100084: Grass  10
+    100086: Grass  11
+    100088: Grass  12
+    100090: Grass  13
+    100092: Grass  14
+    100094: Grass  15
+    100096: Grass  16
+    100098: Grass  17
+    100100: Grass  2
+    100102: Grass  3
+    100104: Grass  4
+    100106: Grass  5
+    100108: Grass  6
+    100110: Grass  7
+    100112: Grass  8
+    100114: Grass  9
+    100116: //RootNode
+    100118: Panels
+    100120: 'Panels '
+    100122: Panels  1
+    100124: Panels  2
+    100126: Panels  3
+    100128: Panels  4
+    100130: 'Road '
+    100132: Road  1
+    100134: Road  10
+    100136: Road  2
+    100138: Road  3
+    100140: Road  4
+    100142: Road  5
+    100144: Road  6
+    100146: Road  7
+    100148: Road  8
+    100150: Road  9
+    100152: RoadGreen
+    100154: 'RoadGreen '
+    100156: RoadGreen  1
+    100158: RoadGreen  2
+    100160: RoadGreen  3
+    100162: RoadGreen  4
+    100164: RoadTile
+    100166: 'RoadTile '
+    100168: RoadTile  1
+    100170: RoadTile  2
+    100172: RoadTile  3
+    100174: RoadTile  4
+    100176: RoadTile  5
+    100178: RoadToGrass
+    100180: 'RoadToGrass '
+    100182: RoadToGrass  1
+    100184: RoadToGrass  10
+    100186: RoadToGrass  11
+    100188: RoadToGrass  12
+    100190: RoadToGrass  13
+    100192: RoadToGrass  14
+    100194: RoadToGrass  15
+    100196: RoadToGrass  16
+    100198: RoadToGrass  17
+    100200: RoadToGrass  18
+    100202: RoadToGrass  19
+    100204: RoadToGrass  2
+    100206: RoadToGrass  20
+    100208: RoadToGrass  21
+    100210: RoadToGrass  3
+    100212: RoadToGrass  4
+    100214: RoadToGrass  5
+    100216: RoadToGrass  6
+    100218: RoadToGrass  7
+    100220: RoadToGrass  8
+    100222: RoadToGrass  9
+    100224: Sand
+    100226: 'Sand '
+    100228: Sand  1
+    100230: Sand  2
+    100232: Sand  3
+    100234: Sand  4
+    100236: Sand  5
+    100238: Sand  6
+    100240: Sand  7
+    100242: Stands
+    100244: 'Stands '
+    100246: Stands  1
+    100248: Stands  2
+    100250: Stands  3
+    100252: Stands  4
+    100254: Stands  5
+    100256: Stands  6
+    100258: Stands  7
+    100260: Texture Group
+    100262: Texture Locators
+    100264: Trees
+    100266: 'Trees '
+    100268: Trees  1
+    100270: Trees  2
+    100272: Trees  3
+    100274: Trees  4
+    100276: TreeTile
+    100278: 'TreeTile '
+    100280: TreeTile  1
+    100282: TreeTile  2
+    100284: Wall
+    100286: Walls
+    100288: 'Walls '
+    100290: Walls  1
+    100292: Walls  10
+    100294: Walls  11
+    100296: Walls  12
+    100298: Walls  13
+    100300: Walls  14
+    100302: Walls  15
+    100304: Walls  16
+    100306: Walls  17
+    100308: Walls  18
+    100310: Walls  19
+    100312: Walls  2
+    100314: Walls  20
+    100316: Walls  21
+    100318: Walls  22
+    100320: Walls  23
+    100322: Walls  3
+    100324: Walls  4
+    100326: Walls  5
+    100328: Walls  6
+    100330: Walls  7
+    100332: Walls  8
+    100334: Walls  9
+    400000: Cerbs
+    400002: 'Cerbs '
+    400004: Cerbs  1
+    400006: Cerbs  10
+    400008: Cerbs  11
+    400010: Cerbs  12
+    400012: Cerbs  13
+    400014: Cerbs  14
+    400016: Cerbs  15
+    400018: Cerbs  16
+    400020: Cerbs  17
+    400022: Cerbs  18
+    400024: Cerbs  19
+    400026: Cerbs  2
+    400028: Cerbs  20
+    400030: Cerbs  21
+    400032: Cerbs  22
+    400034: Cerbs  23
+    400036: Cerbs  24
+    400038: Cerbs  25
+    400040: Cerbs  26
+    400042: Cerbs  27
+    400044: Cerbs  28
+    400046: Cerbs  29
+    400048: Cerbs  3
+    400050: Cerbs  30
+    400052: Cerbs  31
+    400054: Cerbs  32
+    400056: Cerbs  33
+    400058: Cerbs  34
+    400060: Cerbs  35
+    400062: Cerbs  36
+    400064: Cerbs  37
+    400066: Cerbs  38
+    400068: Cerbs  4
+    400070: Cerbs  5
+    400072: Cerbs  6
+    400074: Cerbs  7
+    400076: Cerbs  8
+    400078: Cerbs  9
+    400080: 'Grass '
+    400082: Grass  1
+    400084: Grass  10
+    400086: Grass  11
+    400088: Grass  12
+    400090: Grass  13
+    400092: Grass  14
+    400094: Grass  15
+    400096: Grass  16
+    400098: Grass  17
+    400100: Grass  2
+    400102: Grass  3
+    400104: Grass  4
+    400106: Grass  5
+    400108: Grass  6
+    400110: Grass  7
+    400112: Grass  8
+    400114: Grass  9
+    400116: //RootNode
+    400118: Panels
+    400120: 'Panels '
+    400122: Panels  1
+    400124: Panels  2
+    400126: Panels  3
+    400128: Panels  4
+    400130: 'Road '
+    400132: Road  1
+    400134: Road  10
+    400136: Road  2
+    400138: Road  3
+    400140: Road  4
+    400142: Road  5
+    400144: Road  6
+    400146: Road  7
+    400148: Road  8
+    400150: Road  9
+    400152: RoadGreen
+    400154: 'RoadGreen '
+    400156: RoadGreen  1
+    400158: RoadGreen  2
+    400160: RoadGreen  3
+    400162: RoadGreen  4
+    400164: RoadTile
+    400166: 'RoadTile '
+    400168: RoadTile  1
+    400170: RoadTile  2
+    400172: RoadTile  3
+    400174: RoadTile  4
+    400176: RoadTile  5
+    400178: RoadToGrass
+    400180: 'RoadToGrass '
+    400182: RoadToGrass  1
+    400184: RoadToGrass  10
+    400186: RoadToGrass  11
+    400188: RoadToGrass  12
+    400190: RoadToGrass  13
+    400192: RoadToGrass  14
+    400194: RoadToGrass  15
+    400196: RoadToGrass  16
+    400198: RoadToGrass  17
+    400200: RoadToGrass  18
+    400202: RoadToGrass  19
+    400204: RoadToGrass  2
+    400206: RoadToGrass  20
+    400208: RoadToGrass  21
+    400210: RoadToGrass  3
+    400212: RoadToGrass  4
+    400214: RoadToGrass  5
+    400216: RoadToGrass  6
+    400218: RoadToGrass  7
+    400220: RoadToGrass  8
+    400222: RoadToGrass  9
+    400224: Sand
+    400226: 'Sand '
+    400228: Sand  1
+    400230: Sand  2
+    400232: Sand  3
+    400234: Sand  4
+    400236: Sand  5
+    400238: Sand  6
+    400240: Sand  7
+    400242: Stands
+    400244: 'Stands '
+    400246: Stands  1
+    400248: Stands  2
+    400250: Stands  3
+    400252: Stands  4
+    400254: Stands  5
+    400256: Stands  6
+    400258: Stands  7
+    400260: Texture Group
+    400262: Texture Locators
+    400264: Trees
+    400266: 'Trees '
+    400268: Trees  1
+    400270: Trees  2
+    400272: Trees  3
+    400274: Trees  4
+    400276: TreeTile
+    400278: 'TreeTile '
+    400280: TreeTile  1
+    400282: TreeTile  2
+    400284: Wall
+    400286: Walls
+    400288: 'Walls '
+    400290: Walls  1
+    400292: Walls  10
+    400294: Walls  11
+    400296: Walls  12
+    400298: Walls  13
+    400300: Walls  14
+    400302: Walls  15
+    400304: Walls  16
+    400306: Walls  17
+    400308: Walls  18
+    400310: Walls  19
+    400312: Walls  2
+    400314: Walls  20
+    400316: Walls  21
+    400318: Walls  22
+    400320: Walls  23
+    400322: Walls  3
+    400324: Walls  4
+    400326: Walls  5
+    400328: Walls  6
+    400330: Walls  7
+    400332: Walls  8
+    400334: Walls  9
+    2300000: Cerbs
+    2300002: 'Cerbs '
+    2300004: Cerbs  1
+    2300006: Cerbs  10
+    2300008: Cerbs  11
+    2300010: Cerbs  12
+    2300012: Cerbs  13
+    2300014: Cerbs  14
+    2300016: Cerbs  15
+    2300018: Cerbs  16
+    2300020: Cerbs  17
+    2300022: Cerbs  18
+    2300024: Cerbs  19
+    2300026: Cerbs  2
+    2300028: Cerbs  20
+    2300030: Cerbs  21
+    2300032: Cerbs  22
+    2300034: Cerbs  23
+    2300036: Cerbs  24
+    2300038: Cerbs  25
+    2300040: Cerbs  26
+    2300042: Cerbs  27
+    2300044: Cerbs  28
+    2300046: Cerbs  29
+    2300048: Cerbs  3
+    2300050: Cerbs  30
+    2300052: Cerbs  31
+    2300054: Cerbs  32
+    2300056: Cerbs  33
+    2300058: Cerbs  34
+    2300060: Cerbs  35
+    2300062: Cerbs  36
+    2300064: Cerbs  37
+    2300066: Cerbs  38
+    2300068: Cerbs  4
+    2300070: Cerbs  5
+    2300072: Cerbs  6
+    2300074: Cerbs  7
+    2300076: Cerbs  8
+    2300078: Cerbs  9
+    2300080: 'Grass '
+    2300082: Grass  1
+    2300084: Grass  10
+    2300086: Grass  11
+    2300088: Grass  12
+    2300090: Grass  13
+    2300092: Grass  14
+    2300094: Grass  15
+    2300096: Grass  16
+    2300098: Grass  17
+    2300100: Grass  2
+    2300102: Grass  3
+    2300104: Grass  4
+    2300106: Grass  5
+    2300108: Grass  6
+    2300110: Grass  7
+    2300112: Grass  8
+    2300114: Grass  9
+    2300116: Panels
+    2300118: 'Panels '
+    2300120: Panels  1
+    2300122: Panels  2
+    2300124: Panels  3
+    2300126: Panels  4
+    2300128: 'Road '
+    2300130: Road  1
+    2300132: Road  10
+    2300134: Road  2
+    2300136: Road  3
+    2300138: Road  4
+    2300140: Road  5
+    2300142: Road  6
+    2300144: Road  7
+    2300146: Road  8
+    2300148: Road  9
+    2300150: RoadGreen
+    2300152: 'RoadGreen '
+    2300154: RoadGreen  1
+    2300156: RoadGreen  2
+    2300158: RoadGreen  3
+    2300160: RoadGreen  4
+    2300162: RoadTile
+    2300164: 'RoadTile '
+    2300166: RoadTile  1
+    2300168: RoadTile  2
+    2300170: RoadTile  3
+    2300172: RoadTile  4
+    2300174: RoadTile  5
+    2300176: RoadToGrass
+    2300178: 'RoadToGrass '
+    2300180: RoadToGrass  1
+    2300182: RoadToGrass  10
+    2300184: RoadToGrass  11
+    2300186: RoadToGrass  12
+    2300188: RoadToGrass  13
+    2300190: RoadToGrass  14
+    2300192: RoadToGrass  15
+    2300194: RoadToGrass  16
+    2300196: RoadToGrass  17
+    2300198: RoadToGrass  18
+    2300200: RoadToGrass  19
+    2300202: RoadToGrass  2
+    2300204: RoadToGrass  20
+    2300206: RoadToGrass  21
+    2300208: RoadToGrass  3
+    2300210: RoadToGrass  4
+    2300212: RoadToGrass  5
+    2300214: RoadToGrass  6
+    2300216: RoadToGrass  7
+    2300218: RoadToGrass  8
+    2300220: RoadToGrass  9
+    2300222: Sand
+    2300224: 'Sand '
+    2300226: Sand  1
+    2300228: Sand  2
+    2300230: Sand  3
+    2300232: Sand  4
+    2300234: Sand  5
+    2300236: Sand  6
+    2300238: Sand  7
+    2300240: Stands
+    2300242: 'Stands '
+    2300244: Stands  1
+    2300246: Stands  2
+    2300248: Stands  3
+    2300250: Stands  4
+    2300252: Stands  5
+    2300254: Stands  6
+    2300256: Stands  7
+    2300258: Trees
+    2300260: 'Trees '
+    2300262: Trees  1
+    2300264: Trees  2
+    2300266: Trees  3
+    2300268: Trees  4
+    2300270: TreeTile
+    2300272: 'TreeTile '
+    2300274: TreeTile  1
+    2300276: TreeTile  2
+    2300278: Wall
+    2300280: Walls
+    2300282: 'Walls '
+    2300284: Walls  1
+    2300286: Walls  10
+    2300288: Walls  11
+    2300290: Walls  12
+    2300292: Walls  13
+    2300294: Walls  14
+    2300296: Walls  15
+    2300298: Walls  16
+    2300300: Walls  17
+    2300302: Walls  18
+    2300304: Walls  19
+    2300306: Walls  2
+    2300308: Walls  20
+    2300310: Walls  21
+    2300312: Walls  22
+    2300314: Walls  23
+    2300316: Walls  3
+    2300318: Walls  4
+    2300320: Walls  5
+    2300322: Walls  6
+    2300324: Walls  7
+    2300326: Walls  8
+    2300328: Walls  9
+    3300000: Cerbs
+    3300002: 'Cerbs '
+    3300004: Cerbs  1
+    3300006: Cerbs  10
+    3300008: Cerbs  11
+    3300010: Cerbs  12
+    3300012: Cerbs  13
+    3300014: Cerbs  14
+    3300016: Cerbs  15
+    3300018: Cerbs  16
+    3300020: Cerbs  17
+    3300022: Cerbs  18
+    3300024: Cerbs  19
+    3300026: Cerbs  2
+    3300028: Cerbs  20
+    3300030: Cerbs  21
+    3300032: Cerbs  22
+    3300034: Cerbs  23
+    3300036: Cerbs  24
+    3300038: Cerbs  25
+    3300040: Cerbs  26
+    3300042: Cerbs  27
+    3300044: Cerbs  28
+    3300046: Cerbs  29
+    3300048: Cerbs  3
+    3300050: Cerbs  30
+    3300052: Cerbs  31
+    3300054: Cerbs  32
+    3300056: Cerbs  33
+    3300058: Cerbs  34
+    3300060: Cerbs  35
+    3300062: Cerbs  36
+    3300064: Cerbs  37
+    3300066: Cerbs  38
+    3300068: Cerbs  4
+    3300070: Cerbs  5
+    3300072: Cerbs  6
+    3300074: Cerbs  7
+    3300076: Cerbs  8
+    3300078: Cerbs  9
+    3300080: 'Grass '
+    3300082: Grass  1
+    3300084: Grass  10
+    3300086: Grass  11
+    3300088: Grass  12
+    3300090: Grass  13
+    3300092: Grass  14
+    3300094: Grass  15
+    3300096: Grass  16
+    3300098: Grass  17
+    3300100: Grass  2
+    3300102: Grass  3
+    3300104: Grass  4
+    3300106: Grass  5
+    3300108: Grass  6
+    3300110: Grass  7
+    3300112: Grass  8
+    3300114: Grass  9
+    3300116: Panels
+    3300118: 'Panels '
+    3300120: Panels  1
+    3300122: Panels  2
+    3300124: Panels  3
+    3300126: Panels  4
+    3300128: 'Road '
+    3300130: Road  1
+    3300132: Road  10
+    3300134: Road  2
+    3300136: Road  3
+    3300138: Road  4
+    3300140: Road  5
+    3300142: Road  6
+    3300144: Road  7
+    3300146: Road  8
+    3300148: Road  9
+    3300150: RoadGreen
+    3300152: 'RoadGreen '
+    3300154: RoadGreen  1
+    3300156: RoadGreen  2
+    3300158: RoadGreen  3
+    3300160: RoadGreen  4
+    3300162: RoadTile
+    3300164: 'RoadTile '
+    3300166: RoadTile  1
+    3300168: RoadTile  2
+    3300170: RoadTile  3
+    3300172: RoadTile  4
+    3300174: RoadTile  5
+    3300176: RoadToGrass
+    3300178: 'RoadToGrass '
+    3300180: RoadToGrass  1
+    3300182: RoadToGrass  10
+    3300184: RoadToGrass  11
+    3300186: RoadToGrass  12
+    3300188: RoadToGrass  13
+    3300190: RoadToGrass  14
+    3300192: RoadToGrass  15
+    3300194: RoadToGrass  16
+    3300196: RoadToGrass  17
+    3300198: RoadToGrass  18
+    3300200: RoadToGrass  19
+    3300202: RoadToGrass  2
+    3300204: RoadToGrass  20
+    3300206: RoadToGrass  21
+    3300208: RoadToGrass  3
+    3300210: RoadToGrass  4
+    3300212: RoadToGrass  5
+    3300214: RoadToGrass  6
+    3300216: RoadToGrass  7
+    3300218: RoadToGrass  8
+    3300220: RoadToGrass  9
+    3300222: Sand
+    3300224: 'Sand '
+    3300226: Sand  1
+    3300228: Sand  2
+    3300230: Sand  3
+    3300232: Sand  4
+    3300234: Sand  5
+    3300236: Sand  6
+    3300238: Sand  7
+    3300240: Stands
+    3300242: 'Stands '
+    3300244: Stands  1
+    3300246: Stands  2
+    3300248: Stands  3
+    3300250: Stands  4
+    3300252: Stands  5
+    3300254: Stands  6
+    3300256: Stands  7
+    3300258: Trees
+    3300260: 'Trees '
+    3300262: Trees  1
+    3300264: Trees  2
+    3300266: Trees  3
+    3300268: Trees  4
+    3300270: TreeTile
+    3300272: 'TreeTile '
+    3300274: TreeTile  1
+    3300276: TreeTile  2
+    3300278: Wall
+    3300280: Walls
+    3300282: 'Walls '
+    3300284: Walls  1
+    3300286: Walls  10
+    3300288: Walls  11
+    3300290: Walls  12
+    3300292: Walls  13
+    3300294: Walls  14
+    3300296: Walls  15
+    3300298: Walls  16
+    3300300: Walls  17
+    3300302: Walls  18
+    3300304: Walls  19
+    3300306: Walls  2
+    3300308: Walls  20
+    3300310: Walls  21
+    3300312: Walls  22
+    3300314: Walls  23
+    3300316: Walls  3
+    3300318: Walls  4
+    3300320: Walls  5
+    3300322: Walls  6
+    3300324: Walls  7
+    3300326: Walls  8
+    3300328: Walls  9
+    4300000: Cerbs
+    4300002: 'Grass '
+    4300004: Walls
+    4300006: 'TreeTile '
+    4300008: Stands
+    4300010: Panels
+    4300012: Trees
+    4300014: RoadGreen
+    4300016: RoadToGrass
+    4300018: 'Cerbs '
+    4300020: Sand
+    4300022: 'Road '
+    4300024: RoadTile
+    4300026: 'Sand '
+    4300028: 'Sand '
+    4300030: 'Sand '
+    4300032: 'Sand '
+    4300034: 'Sand '
+    4300036: 'Sand '
+    4300038: 'Sand '
+    4300040: 'Sand '
+    4300042: 'Road '
+    4300044: 'Road '
+    4300046: 'Road '
+    4300048: 'Road '
+    4300050: 'Road '
+    4300052: 'Road '
+    4300054: 'Road '
+    4300056: 'Road '
+    4300058: 'Road '
+    4300060: 'Road '
+    4300062: 'RoadTile '
+    4300064: 'RoadTile '
+    4300066: 'RoadTile '
+    4300068: 'RoadTile '
+    4300070: 'RoadTile '
+    4300072: 'RoadTile '
+    4300074: 'Cerbs '
+    4300076: 'Cerbs '
+    4300078: 'Cerbs '
+    4300080: 'Cerbs '
+    4300082: 'Cerbs '
+    4300084: 'Cerbs '
+    4300086: 'Cerbs '
+    4300088: 'Cerbs '
+    4300090: 'Cerbs '
+    4300092: 'Cerbs '
+    4300094: 'Cerbs '
+    4300096: 'Cerbs '
+    4300098: 'Cerbs '
+    4300100: 'Cerbs '
+    4300102: 'Cerbs '
+    4300104: 'Cerbs '
+    4300106: 'Cerbs '
+    4300108: 'Cerbs '
+    4300110: 'Cerbs '
+    4300112: 'RoadToGrass '
+    4300114: 'RoadToGrass '
+    4300116: 'RoadToGrass '
+    4300118: 'RoadToGrass '
+    4300120: 'RoadToGrass '
+    4300122: 'RoadToGrass '
+    4300124: 'RoadToGrass '
+    4300126: 'RoadToGrass '
+    4300128: 'RoadToGrass '
+    4300130: 'RoadToGrass '
+    4300132: 'RoadToGrass '
+    4300134: 'RoadToGrass '
+    4300136: 'RoadToGrass '
+    4300138: 'RoadToGrass '
+    4300140: 'RoadToGrass '
+    4300142: 'RoadToGrass '
+    4300144: 'RoadToGrass '
+    4300146: 'RoadToGrass '
+    4300148: 'RoadToGrass '
+    4300150: 'RoadToGrass '
+    4300152: 'RoadToGrass '
+    4300154: 'RoadToGrass '
+    4300156: 'RoadGreen '
+    4300158: 'RoadGreen '
+    4300160: 'RoadGreen '
+    4300162: 'RoadGreen '
+    4300164: 'RoadGreen '
+    4300166: 'Grass '
+    4300168: 'Grass '
+    4300170: 'Grass '
+    4300172: 'Grass '
+    4300174: 'Grass '
+    4300176: 'Grass '
+    4300178: 'Grass '
+    4300180: 'Grass '
+    4300182: 'Grass '
+    4300184: 'Grass '
+    4300186: 'Grass '
+    4300188: 'Grass '
+    4300190: 'Grass '
+    4300192: 'Grass '
+    4300194: 'Grass '
+    4300196: 'Grass '
+    4300198: 'Grass '
+    4300200: TreeTile
+    4300202: 'TreeTile '
+    4300204: 'TreeTile '
+    4300206: 'Stands '
+    4300208: 'Stands '
+    4300210: 'Stands '
+    4300212: 'Stands '
+    4300214: 'Stands '
+    4300216: 'Stands '
+    4300218: 'Stands '
+    4300220: 'Stands '
+    4300222: 'Stands '
+    4300224: 'Cerbs '
+    4300226: 'Cerbs '
+    4300228: 'Cerbs '
+    4300230: 'Cerbs '
+    4300232: 'Cerbs '
+    4300234: 'Cerbs '
+    4300236: 'Cerbs '
+    4300238: 'Cerbs '
+    4300240: 'Cerbs '
+    4300242: 'Cerbs '
+    4300244: 'Cerbs '
+    4300246: 'Cerbs '
+    4300248: 'Cerbs '
+    4300250: 'Cerbs '
+    4300252: 'Cerbs '
+    4300254: 'Cerbs '
+    4300256: 'Cerbs '
+    4300258: 'Cerbs '
+    4300260: 'Cerbs '
+    4300262: 'Panels '
+    4300264: 'Panels '
+    4300266: 'Panels '
+    4300268: 'Panels '
+    4300270: 'Panels '
+    4300272: 'Walls '
+    4300274: 'Walls '
+    4300276: 'Walls '
+    4300278: 'Walls '
+    4300280: 'Walls '
+    4300282: 'Walls '
+    4300284: 'Walls '
+    4300286: 'Walls '
+    4300288: 'Walls '
+    4300290: 'Walls '
+    4300292: 'Walls '
+    4300294: 'Walls '
+    4300296: 'Walls '
+    4300298: 'Walls '
+    4300300: 'Walls '
+    4300302: 'Walls '
+    4300304: 'Walls '
+    4300306: 'Walls '
+    4300308: 'Walls '
+    4300310: 'Walls '
+    4300312: 'Walls '
+    4300314: 'Walls '
+    4300316: 'Walls '
+    4300318: 'Walls '
+    4300320: Wall
+    4300322: 'Trees '
+    4300324: 'Trees '
+    4300326: 'Trees '
+    4300328: 'Trees '
+    4300330: 'Trees '
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

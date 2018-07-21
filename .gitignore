@@ -1,0 +1,47 @@
+/Temp
+/obj
+/Library
+/AssetBundles
+/Builds
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.pidb
+*.userprefs
+Assets/-tk2d.*
+Assets/Resources/tk2d/*
+/.idea
+
+#Resharper
+*.DotSettings
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Thumbs.db.meta
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+obj/
+*.svd
+*.user
+*.booproj
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+!P31PostProcessor.pyc
+Assets/Plugins/Editor/JetBrains/Unity3DRider.cs.meta
+Assets/Plugins/Editor/JetBrains.meta
