@@ -14,10 +14,18 @@ namespace Vigilant.Engines
 
 		private const float DampRateOffset = 40;
 
+		private float steerTimer = 0;
+		
 		#endregion
 
 		#region Properties
 
+		public float SteerTimer
+		{
+			get { return steerTimer; }
+			set { steerTimer = value; }
+		}
+		
 		#endregion
 
 		#region Methods
@@ -86,17 +94,17 @@ namespace Vigilant.Engines
 		/// <param name="steerTimer"></param>
 		/// <param name="steering"></param>
 		public void SteerAssistance(float averageLateralSlip, float oldSteering, float fixedTimeStepScalar,
-			ref float steerTimer, ref float steering)
+			ref float steering)
 		{
 			float sign, steeringVelocity, dampRate, dampingForce, acceleration;
 			float maxSteer = Mathf.Clamp(1 - Mathf.Abs(averageLateralSlip), -1, 1);
 
 			try
 			{
-				if (steerTimer <= 1)
+				if (SteerTimer <= 1)
 				{
-					steerTimer += Time.deltaTime;
-					maxSteer = 1 - steerTimer + steerTimer * maxSteer;
+					SteerTimer += Time.deltaTime;
+					maxSteer = 1 - SteerTimer + SteerTimer * maxSteer;
 				}
 			}
 			catch (OverflowException exception)
@@ -271,7 +279,7 @@ namespace Vigilant.Engines
 			}
 		}
 
-		public void DoABS(float ABSThreshold, float brake, List<Wheel> allWheels, ref bool ABSTriggered)
+		public void DoABS(float ABSThreshold, float brake, List<Wheel> allWheels)
 		{
 			foreach (Wheel w in allWheels)
 			{
@@ -280,18 +288,15 @@ namespace Vigilant.Engines
 				{
 					// wheels locked
 					w.brake = 0;
-					ABSTriggered = true;
 				}
 				else
 				{
 					w.brake = brake;
-					ABSTriggered = false;
 				}
 			}
 		}
 
-		public void DoTCS(List<Wheel> poweredWheels, float TCSThreshold, float externalTCSThreshold, ref float maxThrottle,
-			ref bool TCSTriggered)
+		public void DoTCS(List<Wheel> poweredWheels, float TCSThreshold, float externalTCSThreshold, ref float maxThrottle)
 		{
 			float maxSlip = 0;
 			/* 		foreach(Wheel w in drivetrain.poweredWheels){
@@ -309,21 +314,19 @@ namespace Vigilant.Engines
 				}
 			}
 
-			TCSTriggered = false;
 			float threshold = maxSlip - TCSThreshold - externalTCSThreshold;
 			if (threshold > 1)
 			{
 				maxThrottle = Mathf.Clamp(2 - threshold, 0, 1);
-				if (maxThrottle > 0.9f) maxThrottle = 1;
-				else
+				if (maxThrottle > 0.9f)
 				{
-					TCSTriggered = true;
+					maxThrottle = 1;
 				}
 			}
 		}
 
 		public void DoESP(Transform playerTransform, Rigidbody playeRigidbody, float velocity, Axles axles,
-			float ESPStrength, Drivetrain drivetrain, ref float maxThrottle, ref bool ESPTriggered)
+			float ESPStrength, Drivetrain drivetrain, ref float maxThrottle)
 		{
 			Vector3 driveDir = playerTransform.forward;
 			Vector3 veloDir = playeRigidbody.velocity;
@@ -336,7 +339,6 @@ namespace Vigilant.Engines
 				angle = -Mathf.Asin(Vector3.Dot(Vector3.Cross(driveDir, veloDir), playerTransform.up));
 			}
 
-			ESPTriggered = false;
 			if (angle > 0.1f)
 			{
 				//turning right and fishtailing
@@ -344,7 +346,6 @@ namespace Vigilant.Engines
 					axles.frontAxle.leftWheel.brake =
 						Mathf.Clamp01(axles.frontAxle.leftWheel.brake + Mathf.Abs(angle) * ESPStrength);
 				maxThrottle = Mathf.Max(maxThrottle - angle * ESPStrength, drivetrain.idlethrottle);
-				ESPTriggered = true;
 				//brakeKey=true;
 			}
 			else if (angle < -0.1f)
@@ -354,7 +355,6 @@ namespace Vigilant.Engines
 					axles.frontAxle.rightWheel.brake =
 						Mathf.Clamp01(axles.frontAxle.rightWheel.brake + Mathf.Abs(angle) * ESPStrength);
 				maxThrottle = Mathf.Max(maxThrottle + angle * ESPStrength, drivetrain.idlethrottle);
-				ESPTriggered = true;
 				//brakeKey=true;
 			}
 		}

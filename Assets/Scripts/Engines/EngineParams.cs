@@ -9,6 +9,8 @@ namespace Vigilant.Engines
     {
         #region Fields
         
+        protected float maxThrottleInReverse = 1f;//maximum allowed throttle in reverse
+        
         protected float throttleTime = 0.1f;// How long it takes to fully engage the throttle.
         protected float throttleReleaseTime = 0.1f;// How long it takes to fully release the throttle.
         protected float brakesTime = 0.1f;// How long it takes to fully engage the brakes
@@ -74,6 +76,12 @@ namespace Vigilant.Engines
         public float ThrottleTime
         {
             get { return throttleTime; }
+        }
+
+        public float MaxThrottleInReverse
+        {
+            get { return maxThrottleInReverse; }
+            set { maxThrottleInReverse = value; }
         }
 
         #endregion
