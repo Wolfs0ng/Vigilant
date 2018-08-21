@@ -19,33 +19,18 @@ namespace Vigilant.Engines
         //TODO: возможно стоит назначать через di
         // Cached References
         [SerializeField] protected Rigidbody tempRigidbody;
-	    [SerializeField] protected Transform myTransform;
-	    [SerializeField] protected CarDynamics carDynamics;
 	    [SerializeField] protected Drivetrain drivetrain;
 	    [SerializeField] protected Axles axles;
+	    [SerializeField] protected CarDynamics carDynamics;
 	    
 	    [SerializeField] protected OnlyKeyboardInputManager inputManager;
 	    
-	    [SerializeField] protected float steerAssistanceMinVelocity;
-	    [SerializeField] protected float minTCSVelocity;
-	    [SerializeField] protected float minESPVelocity;
-	    [SerializeField] protected float minABSVelocity;
-	    
-	    [SerializeField] protected float thresholdTCS;
-	    [SerializeField] protected float thresholdABS;
-	    [SerializeField] protected float strengthESP = 2f;
-	    
 	    [SerializeField] protected bool smoothInput;
-	    [SerializeField] protected bool TCS; // Traction Control System.
-	    [SerializeField] protected bool ESP; // Electronic Stability Program.
-	    [SerializeField] protected bool ABS; // Anti-lock braking.
 	    
         [SerializeField] List<Wheel> allWheels;
 
         protected Vector2 moveDirection;
         
-        protected float ownerVelocity;// car's speed
-	    
 	    protected float oldSteering;
 	    protected float steering;
 	    protected float deltaSteering;
@@ -56,10 +41,10 @@ namespace Vigilant.Engines
 	    protected float steerTimer;
 	    
         protected int targetGear;
-
-	    protected float externalTCSThreshold;  // used to improve TCS behaviour with powerMultiplier>1
 	    
 	    protected bool steerAssistance;
+	    
+	    protected float steerAssistanceMinVelocity;
 	    
 	    //Need only for dashboard, so no need at all.
 //	    protected bool triggeredTCS;
@@ -74,6 +59,7 @@ namespace Vigilant.Engines
 
 	    //New field, testing....
 	    protected EngineParams engineParams;
+	    protected EngineControlSystems engineControlSystems;
 	    protected IEngineAssistant engineAssistant;
 	    
         #endregion
@@ -204,6 +190,17 @@ namespace Vigilant.Engines
 		    }
 	    }
 
+	    public EngineControlSystems EngineControlSystems
+	    {
+		    set
+		    {
+			    if (value != null)
+			    {
+				    engineControlSystems = value;
+			    }
+		    }
+	    }
+
 	    #endregion
 
         #region Unity Events
@@ -215,11 +212,6 @@ namespace Vigilant.Engines
                 tempRigidbody = GetComponent<Rigidbody>();
             }
 
-            if (carDynamics == null)
-            {
-                carDynamics = GetComponent<CarDynamics>();
-            }
-
             if (drivetrain == null)
             {
                 drivetrain = GetComponent<Drivetrain>();
@@ -228,11 +220,6 @@ namespace Vigilant.Engines
             if (axles == null)
             {
                 axles = GetComponent<Axles>();
-            }
-
-            if (myTransform == null)
-            {
-                myTransform = transform;
             }
 
             if (allWheels == null && allWheels.Count <= 0)
@@ -256,6 +243,11 @@ namespace Vigilant.Engines
 	        {
 		        engineAssistant = new EngineAssistant();
 	        }
+	        
+            if (carDynamics == null)
+            {
+                carDynamics = GetComponent<CarDynamics>();
+            }
 
 	        moveDirection = Vector2.zero;
         }
@@ -269,7 +261,7 @@ namespace Vigilant.Engines
 
 		    if (drivetrain.automatic && drivetrain.autoReverse)
 		    {
-			    if (moveDirection.y < 0 && ownerVelocity <= 0.5f)
+			    if (moveDirection.y < 0 && engineParams.OwnerVelocity <= 0.5f)
 			    {
 				    if (drivetrain.gear != drivetrain.firstReverse)
 				    {
@@ -277,7 +269,7 @@ namespace Vigilant.Engines
 				    }
 			    }
 
-			    if (moveDirection.y > 0 && ownerVelocity <= 0.5f)
+			    if (moveDirection.y > 0 && engineParams.OwnerVelocity <= 0.5f)
 			    {
 				    if (drivetrain.gear != drivetrain.first)
 				    {
@@ -289,15 +281,17 @@ namespace Vigilant.Engines
 
 	    private void FixedUpdate()
 	    {
-		    float currentMaxThrottle = 1;
+		    engineParams.MaxThrottle = 1;
 		    oldSteering = steering;
-		    ownerVelocity = carDynamics.velo;
-		    var ownerVelocityInKmh = carDynamics.velo * 3.6f;// car's speed in kmh
+		    
+            
+		    engineParams.OwnerVelocity = carDynamics.velo;
+		    float ownerVelocityInKmh = engineParams.OwnerVelocity * 3.6f;// car's speed in kmh
 		    bool onGround = drivetrain.OnGround();
 
 		    if (smoothInput)
 		    {
-			    engineAssistant.SmoothSteer(moveDirection.x,ownerVelocity, engineParams, ref steering);
+			    engineAssistant.SmoothSteer(moveDirection.x,engineParams.OwnerVelocity, engineParams, ref steering);
 			    
 			    engineAssistant.SmoothThrottle(moveDirection.y, engineParams, drivetrain.changingGear,
 				    drivetrain.automatic, ref throttle);
@@ -333,30 +327,11 @@ namespace Vigilant.Engines
 			    engineAssistant.SteerTimer = 0;
 		    }
 
-
-		    if (TCS && drivetrain.ratio > 0 && drivetrain.clutch.GetClutchPosition() >= 0.9f && onGround &&
-		        throttle > drivetrain.idlethrottle && ownerVelocityInKmh > minTCSVelocity)
-		    {
-
-			    //we enable TCS only for speed > TCSMinVelocity (in km/h)
-			    engineAssistant.DoTCS(drivetrain.poweredWheels.ToList(), thresholdTCS, externalTCSThreshold, ref currentMaxThrottle);
-		    }
-
-		    if (ESP && drivetrain.ratio > 0 && onGround && ownerVelocityInKmh > minESPVelocity)
-		    {
-			    //we enable ESP only for speed > ESPMinVelocity (in km/h)
-			    engineAssistant.DoESP(myTransform, tempRigidbody, ownerVelocity, axles, strengthESP, drivetrain, ref currentMaxThrottle);
-		    }
-
-		    if (ABS && brake > 0 && ownerVelocityInKmh > minABSVelocity && onGround)
-		    {
-			    //we enable ABS only for speed > ABSMinVelocity (in km/h)
-			    engineAssistant.DoABS(thresholdABS, brake, allWheels);
-		    }
+		    throttle = engineControlSystems.CheckControlSystem(throttle, gameObject, brake, allWheels);
 
 		    if (drivetrain.gearRatios[drivetrain.gear] <= 0)
 		    {
-				currentMaxThrottle = engineParams.MaxThrottleInReverse;
+				engineParams.MaxThrottle = engineParams.MaxThrottleInReverse;
 		    }
 
 		    if (drivetrain.revLimiterTriggered)
@@ -369,7 +344,7 @@ namespace Vigilant.Engines
 		    }
 		    else
 		    {
-			    throttle = Mathf.Clamp(throttle, drivetrain.idlethrottle, currentMaxThrottle);
+			    throttle = Mathf.Clamp(throttle, drivetrain.idlethrottle, engineParams.MaxThrottle);
 		    }
 
 		    brake = Mathf.Clamp01(brake);
@@ -379,7 +354,7 @@ namespace Vigilant.Engines
 		    // Apply inputs
 		    foreach (Wheel w in allWheels)
 		    {
-			    if (!(ABS && ownerVelocityInKmh > minABSVelocity && moveDirection.y < 0))
+			    if (!(engineControlSystems.Abs && ownerVelocityInKmh > engineControlSystems.MinAbsVelocity && moveDirection.y < 0))
 			    {
 				    w.brake = brake; // if ABS is on, brakes are applied by ABS directly
 			    }

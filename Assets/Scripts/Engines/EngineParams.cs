@@ -9,7 +9,10 @@ namespace Vigilant.Engines
     {
         #region Fields
         
+        protected float maxThrottle = 1f;
         protected float maxThrottleInReverse = 1f;//maximum allowed throttle in reverse
+        
+        protected float ownerVelocity;// car's speed
         
         protected float throttleTime = 0.1f;// How long it takes to fully engage the throttle.
         protected float throttleReleaseTime = 0.1f;// How long it takes to fully release the throttle.
@@ -84,18 +87,38 @@ namespace Vigilant.Engines
             set { maxThrottleInReverse = value; }
         }
 
-        #endregion
+        public float MaxThrottle
+        {
+            get { return maxThrottle; }
+            set { maxThrottle = value; }
+        }
 
-        #region Unity Events
+        public float OwnerVelocity
+        {
+            get { return ownerVelocity; }
+            set { ownerVelocity = value; }
+        }
+
         #endregion
 
         #region Methods
 
         public EngineParams(float throttleTime = .1f, float throttleReleaseTime = .1f, float brakesTime = .1f,
             float brakesReleaseTime = .1f, float steerTime = .1f, float steerReleaseTime = .1f,
-            float veloSteerTime = .05f, float velocitySteerReleaseTime = .05f, float steerCorrectionFactor = 0)
+            float veloSteerTime = .05f, float velocitySteerReleaseTime = .05f, float steerCorrectionFactor = 0,
+            float maxThrottle = 1f, float maxThrottleInReverse = 1f)
         {
-
+            this.throttleTime = throttleTime;
+            this.throttleReleaseTime = throttleReleaseTime;
+            this.brakesTime = brakesTime;
+            this.brakesReleaseTime = brakesReleaseTime;
+            this.steerTime = steerTime;
+            this.steerReleaseTime = steerReleaseTime;
+            this.veloSteerTime = veloSteerTime;
+            this.velocitySteerReleaseTime = velocitySteerReleaseTime;
+            this.steerCorrectionFactor = steerCorrectionFactor;
+            this.maxThrottle = maxThrottle;
+            this.maxThrottleInReverse = maxThrottleInReverse;
         }
 
         #endregion

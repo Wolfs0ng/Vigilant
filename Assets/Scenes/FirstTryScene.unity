@@ -88,7 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
+    m_ShowResolutionOverlay: 0
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -252,25 +252,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempRigidbody: {fileID: 0}
-  myTransform: {fileID: 0}
-  carDynamics: {fileID: 0}
   drivetrain: {fileID: 0}
   axles: {fileID: 0}
+  carDynamics: {fileID: 0}
   inputManager: {fileID: 0}
-  steerAssistanceMinVelocity: 0
+  smoothInput: 0
+  allWheels: []
+--- !u!114 &333226073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 333226071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4511ff92c4a40474fb634d9b0c3fc7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engine: {fileID: 0}
+  throttleTime: 0.1
+  throttleReleaseTime: 0.1
+  brakesTime: 0.1
+  brakesReleaseTime: 0.1
+  steerTime: 0.1
+  steerReleaseTime: 0.1
+  veloSteerTime: 0.05
+  velocitySteerReleaseTime: 0.05
+  steerCorrectionFactor: 0
+  maxThrottle: 1
+  maxThrottleInReverse: 1
+  TCS: 0
+  ESP: 0
+  ABS: 0
   minTCSVelocity: 0
   minESPVelocity: 0
   minABSVelocity: 0
   thresholdTCS: 0
   thresholdABS: 0
-  strengthESP: 2
-  smoothInput: 0
-  TCS: 0
-  ESP: 0
-  ABS: 0
-  allWheels: []
-  brakesTime: 0.1
-  brakesReleaseTime: 0.1
+  strengthESP: 0
 --- !u!1 &389633314
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,7 +607,7 @@ Camera:
   far clip plane: 500
   field of view: 60
   orthographic: 0
-  orthographic size: 100
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
